@@ -61,5 +61,11 @@ module.exports = class extends Generator {
       this.destinationPath('.eslintrc.js'),
       this.props
     )
+    // Apply jest config
+    this.fs.copyTpl(
+      this.templatePath('jest.config.js'),
+      this.destinationPath('jest.config.js'),
+      this.props
+    )
   }
 }
