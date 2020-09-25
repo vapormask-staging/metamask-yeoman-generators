@@ -40,9 +40,6 @@
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
