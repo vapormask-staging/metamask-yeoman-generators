@@ -75,7 +75,8 @@
   "scripts": {
     "lint": "eslint .",
     "build": "echo 'no build step'",
-    "test": "jest"
+    "test": "jest",
+    "apply-local": "yo ./generators/package"
   },
   "license": "MIT"
 }
