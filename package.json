@@ -73,7 +73,8 @@
     ]
   },
   "scripts": {
-    "pretest": "eslint .",
+    "lint": "eslint .",
+    "build": "echo 'no build step'",
     "test": "jest"
   },
   "license": "MIT"
