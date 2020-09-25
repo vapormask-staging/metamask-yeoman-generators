@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "yarn run build:clean && yarn run build:compile && yarn run build:bundle",
+    "build:clean": "rm -rf ./dist",
+    "build:compile": "yarn build:compile:esm && yarn build:compile:cjs",
+    "build:compile:esm": "tsc --module ES6 --outDir ./dist/esm",
+    "build:compile:cjs": "tsc --module UMD --outDir ./dist/cjs",
+    "build:bundle": "browserify --standalone PostMessageStream ./dist/cjs/index.js > ./dist/bundle.js"
+  }
+}

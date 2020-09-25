@@ -2,8 +2,19 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const yosay = require("yosay");
+const { recursive: merge } = require("merge");
+const pkgAdditions = require("./package-additions.json");
 
 module.exports = class extends Generator {
+  constructor(...args) {
+    super(...args);
+    this.option("typescript", {
+      desc: "support typescript",
+      alias: "t",
+      type: value => value === true || value === "true"
+    });
+  }
+
   initializing() {
     this.composeWith(require.resolve("../javascript"));
   }
@@ -17,5 +28,30 @@ module.exports = class extends Generator {
         )} project files!`
       )
     );
+
+    // Prompt for missing options
+    const prompts = [
+      {
+        type: "confirm",
+        name: "typescript",
+        message: "Add support for typescript?",
+        default: true,
+        when: !("typescript" in this.options)
+      }
+    ];
+    const results = await this.prompt(prompts);
+    this.props = { ...this.options, ...results };
+  }
+
+  writing() {
+    // Apply typescript
+    if (this.props.typescript === true) {
+      const currentPkg = this.fs.readJSON(
+        this.destinationPath("package.json"),
+        {}
+      );
+      const newPkg = merge(currentPkg, pkgAdditions);
+      this.fs.writeJSON(this.destinationPath("package.json"), newPkg);
+    }
   }
 };

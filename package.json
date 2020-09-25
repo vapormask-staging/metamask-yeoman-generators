@@ -77,7 +77,7 @@
     "lint": "eslint .",
     "build": "echo 'no build step'",
     "test": "jest",
-    "apply-local": "yo ./generators/package"
+    "apply-local": "yo ./generators/package --typescript=false"
   },
   "allowScripts": {
     "husky": true,
