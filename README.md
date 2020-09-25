@@ -30,8 +30,7 @@ you can run these generators on this repo itself
 npx yo ./generators/package
 ```
 
-or
-
+the "apply-local" npm script applies the generators that are relevant for this repo
 ```bash
 yarn apply-local
 ```
