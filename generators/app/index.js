@@ -1,19 +1,20 @@
-"use strict";
-const Generator = require("yeoman-generator");
-const chalk = require("chalk");
-const yosay = require("yosay");
+'use strict'
+
+const Generator = require('yeoman-generator')
+const chalk = require('chalk')
+const yosay = require('yosay')
 
 module.exports = class extends Generator {
-  initializing() {
-    this.composeWith(require.resolve("../javascript"));
+  initializing () {
+    this.composeWith(require.resolve('../javascript'))
   }
 
-  async prompting() {
+  async prompting () {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Generating the ${chalk.red("MetaMask standard app")} project files!`
+        `Generating the ${chalk.red('MetaMask standard app')} project files!`
       )
-    );
+    )
   }
-};
+}

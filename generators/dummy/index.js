@@ -1,14 +1,15 @@
-"use strict";
-const Generator = require("yeoman-generator");
-const chalk = require("chalk");
-const yosay = require("yosay");
+'use strict'
+
+const Generator = require('yeoman-generator')
+const chalk = require('chalk')
+const yosay = require('yosay')
 
 module.exports = class extends Generator {
-  prompting() {
+  prompting () {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the riveting ${chalk.red("dummy file")} generator!`)
-    );
+      yosay(`Welcome to the riveting ${chalk.red('dummy file')} generator!`)
+    )
 
     // Const prompts = [
     //   {
@@ -25,10 +26,10 @@ module.exports = class extends Generator {
     // });
   }
 
-  writing() {
+  writing () {
     this.fs.copy(
-      this.templatePath("dummyfile.txt"),
-      this.destinationPath("dummyfile.txt")
-    );
+      this.templatePath('dummyfile.txt'),
+      this.destinationPath('dummyfile.txt')
+    )
   }
-};
+}
