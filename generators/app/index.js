@@ -12,9 +12,7 @@ module.exports = class extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Generating the ${chalk.red(
-          "MetaMask standard package"
-        )} project files!`
+        `Generating the ${chalk.red("MetaMask standard app")} project files!`
       )
     );
   }
