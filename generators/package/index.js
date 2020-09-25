@@ -46,6 +46,7 @@ module.exports = class extends Generator {
   writing() {
     // Apply typescript
     if (this.props.typescript === true) {
+      // add package scripts
       const currentPkg = this.fs.readJSON(
         this.destinationPath("package.json"),
         {}
@@ -53,5 +54,11 @@ module.exports = class extends Generator {
       const newPkg = merge(currentPkg, pkgAdditions);
       this.fs.writeJSON(this.destinationPath("package.json"), newPkg);
     }
+    // Apply eslint
+    this.fs.copyTpl(
+      this.templatePath('.eslintrc.js'),
+      this.destinationPath('.eslintrc.js'),
+      this.props
+    );
   }
 };
