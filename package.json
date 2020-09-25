@@ -17,6 +17,7 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "allow-scripts": "^1.5.3",
     "coveralls": "^3.0.7",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
@@ -76,7 +77,15 @@
     "lint": "eslint .",
     "build": "echo 'no build step'",
     "test": "jest",
-    "apply-local": "yo ./generators/package"
+    "apply-local": "yo ./generators/package",
+    "after-install": ""
+  },
+  "allowScripts": {
+    "husky": true,
+    "ejs": false,
+    "core-js": false,
+    "spawn-sync": false,
+    "yo": true
   },
   "license": "MIT"
 }
