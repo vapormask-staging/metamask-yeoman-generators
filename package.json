@@ -1,7 +1,7 @@
 {
   "name": "generator-mm",
   "repository": "MetaMask/metamask-yeoman-generators",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "metamask project templates",
   "homepage": "",
   "author": {
