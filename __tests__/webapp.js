@@ -4,10 +4,10 @@ const path = require('path')
 const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 
-describe('generator-mm-package:app', () => {
+describe('generator-mm-package:webapp', () => {
   beforeAll(() => {
     return helpers
-      .run(path.join(__dirname, '../generators/app'))
+      .run(path.join(__dirname, '../generators/webapp'))
       .withPrompts({ someAnswer: true })
   })
 
