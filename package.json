@@ -1,5 +1,5 @@
 {
-  "name": "metamask-yeoman-generators",
+  "name": "generator-mm",
   "repository": "MetaMask/metamask-yeoman-generators",
   "version": "0.0.0",
   "description": "metamask project templates",
@@ -9,9 +9,10 @@
     "email": "aaron@kumavis.me"
   },
   "files": [
+    "index.js",
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "index.js",
   "keywords": [
     "metamask",
     "yeoman-generator"
