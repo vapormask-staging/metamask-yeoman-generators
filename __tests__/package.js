@@ -13,6 +13,7 @@ describe('generator-mm-package:package', () => {
 
     assert.file([
       '.github/workflows/nodejs.yml',
+      '.github/workflows/npm-publish.yml',
       '.eslintrc.js',
       'jest.config.js',
     ])
@@ -25,6 +26,7 @@ describe('generator-mm-package:package', () => {
 
     assert.file([
       '.github/workflows/nodejs.yml',
+      '.github/workflows/npm-publish.yml',
       '.eslintrc.js',
       'jest.config.js',
     ])
