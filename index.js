@@ -1,7 +1,8 @@
 'use strict'
 
 module.exports = {
-  app: require.resolve('./app'),
-  javascript: require.resolve('./javascript'),
   package: require.resolve('./package'),
+  webapp: require.resolve('./webapp'),
+  javascript: require.resolve('./javascript'),
+  app: require.resolve('./app'),
 }
