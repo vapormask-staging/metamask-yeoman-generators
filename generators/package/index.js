@@ -67,5 +67,7 @@ module.exports = class extends Generator {
       this.destinationPath('jest.config.js'),
       this.props
     )
+    // Apply github action: npm publish on release
+    this.fs.copy(this.templatePath('github-actions-release.yml'), this.destinationPath('.github/workflows/npm-publish.yml'))
   }
 }
