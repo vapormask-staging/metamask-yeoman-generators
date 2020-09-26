@@ -1,17 +1,13 @@
-name: Tests
-
+name: npm publish
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-
+  release:
+    types: [created]
 jobs:
   build:
-    name: Build & test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -23,10 +19,6 @@ jobs:
     - run: yarn build
     - run: yarn lint
     - run: yarn test
-  all-jobs-pass:
-    name: All jobs pass
-    runs-on: ubuntu-20.04
-    needs:
-      - build
-    steps:
-    - uses: actions/checkout@v2
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
