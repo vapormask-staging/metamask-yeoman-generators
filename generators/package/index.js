@@ -68,6 +68,9 @@ module.exports = class extends Generator {
       this.props
     )
     // Apply github action: npm publish on release
-    this.fs.copy(this.templatePath('github-actions-release.yml'), this.destinationPath('.github/workflows/npm-publish.yml'))
+    this.fs.copy(
+      this.templatePath('npm-publish.yml'),
+      this.destinationPath('.github/workflows/npm-publish.yml'),
+    )
   }
 }
