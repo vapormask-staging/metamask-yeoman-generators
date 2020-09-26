@@ -13,7 +13,9 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
+        registry-url: 'https://registry.npmjs.org'
         node-version: ${{ matrix.node-version }}
+        always-auth: true
     - run: yarn install --frozen-lockfile --ignore-scripts
     - run: npx allow-scripts
     - run: yarn build
